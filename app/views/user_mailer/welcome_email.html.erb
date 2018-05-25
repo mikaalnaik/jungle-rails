@@ -9,7 +9,14 @@
     <p>
       You have successfully signed up to example.com,
       your username is: <%= @user.first_name %>.<br>
-      <%= order.id %>
+      <% @order.line_items.each do |elm| %>
+      Quantity  <%= elm.quantity %>
+      <br>
+      <b>
+      <%= elm.product.name %></b>  <%= elm.product.description %>
+      <%= elm.quantity %> 
+      <br>
+      <% end %>
     </p>
     <p>
     </p>
