@@ -133,4 +133,10 @@ cat3.products.create!({
 })
 
 
+# Add reviews
+
+
+
+
+
 puts "DONE!"

@@ -25,7 +25,27 @@
         </dl>
       </div>
     </div>
+  </article><b>
+  Reviews<br><br>
+</b><br>
+<% if @product.reviews.size == 0 %>
+  <%= puts '\n' %>
+<% else %>
+  <% @product.reviews.each do |review| %>
+    <%= review.user.first_name %>
+    <br>
+    <b>
+    <%= review.description %></b>  <br>
+    Rating: <%= review.rating %>
+    <br>
+    <br>
+  <% end %>
+<% end %>
+    <%= form_for [@product, @review]  do |f| %>
+      Description: <%= f.text_field :description %>
+      Rating: <%= f.number_field :rating %>
+      <%= f.submit "Submit" %>
+    <% end %>
 
-  </article>
 
 </section>
